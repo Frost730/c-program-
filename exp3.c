@@ -29,4 +29,32 @@ int main() {
     return 0;
 }
 // pyramid
+// alternative
+#include <stdio.h>
+
+int main() {
+    int i, j, a = 0, n;
+    printf("Enter the number of rows:\n");
+    scanf("%d", &n);
+
+    for (i = 1; i <= n; i++) {
+        a = i - 1;  // Reset 'a' to the starting value for each row
+        for (j = 1; j <= n - i; j++) {
+            printf(" ");  // Print leading spaces
+        }
+
+        for (j = 1; j <= i; j++) {
+            printf("%d", ++a);  // Print increasing numbers
+        }
+
+        for (j = 1; j < i; j++) {
+            printf("%d", --a);  // Print decreasing numbers
+        }
+
+        printf("\n");
+    }
+
+//     return 0;
+// }
+
 
