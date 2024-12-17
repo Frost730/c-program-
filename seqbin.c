@@ -95,4 +95,22 @@ void bubbleSort(int arr[], int n) {
         }
     }
 }
+
+// alt method for seq
+void sequentialSearch(int arr[], int n, int item) {
+    int flag=0;
+
+    for (int i = 0; i < n; i++) {
+        if (arr[i] == item) {
+            flag = 1;
+            break; // Stop searching after the first occurrence is found
+        }
+    }
+
+    if (flag==1) {
+        printf("Element found \n");
+    } else {
+        printf("Element not found.\n");
+    }
+}
     
