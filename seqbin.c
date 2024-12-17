@@ -1,20 +1,20 @@
 #include <stdio.h>
 
-void sequentialSearch(int arr[], int size, int item);
+void sequentialSearch(int arr[], int n, int item);
 void binarySearch(int arr[], int n, int item);
 void bubbleSort(int arr[], int n);
 
 int main() {
-    int size, choice;
+    int n, choice;
 
     // Input array size
     printf("Enter the number of elements in the array: ");
-    scanf("%d", &size);
-    int arr[size];
+    scanf("%d", &n);
+    int arr[n];
 
     // Input array elements
     printf("Enter array elements:\n");
-    for (int i = 0; i < size; i++) {
+    for (int i = 0; i < n; i++) {
         printf("Element %d: ", i);
         scanf("%d", &arr[i]);
     }
@@ -30,12 +30,12 @@ int main() {
     
     switch (choice) {
         case 1:
-            sequentialSearch(arr, size, item);
+            sequentialSearch(arr, n, item);
             break;
         case 2:
             // Sort the array before binary search
-            bubbleSort(arr, size);
-            binarySearch(arr, size, item);
+            bubbleSort(arr, n);
+            binarySearch(arr, n, item);
             break;
         default:
             printf("Invalid choice.\n");
@@ -47,12 +47,12 @@ int main() {
 }
 
 
-void sequentialSearch(int arr[], int size, int item) {
+void sequentialSearch(int arr[], int n, int item) {
     int r = -1;
 
-    for (int j = 0; j < size; j++) {
-        if (arr[j] == item) {
-            r = j;
+    for (int i = 0; i < n; i++) {
+        if (arr[i] == item) {
+            r = i;
             break; // Stop searching after the first occurrence is found
         }
     }
@@ -95,5 +95,4 @@ void bubbleSort(int arr[], int n) {
         }
     }
 }
-
     
