@@ -48,17 +48,17 @@ int main() {
 
 
 void sequentialSearch(int arr[], int size, int item) {
-    int r = -1, count = 0;
+    int r = -1;
 
     for (int j = 0; j < size; j++) {
         if (arr[j] == item) {
-            if (r == -1) r = j; 
-            count++;
+            r = j;
+            break; // Stop searching after the first occurrence is found
         }
     }
 
     if (r != -1) {
-        printf("Element first found at index %d and its occurrence: %d\n", r, count);
+        printf("Element first found at index %d\n", r);
     } else {
         printf("Element not found.\n");
     }
@@ -96,29 +96,4 @@ void bubbleSort(int arr[], int n) {
     }
 }
 
-        if (arr[mid] == item) {
-            printf("Item found at position %d\n", mid + 1);
-            return; 
-        } else if (item < arr[mid]) {
-            end = mid - 1;
-        } else {
-            beg = mid + 1;
-        }
-    }
-    printf("Item not found.\n");
-}
-
-
-void bubbleSort(int arr[], int n) {
- for (int i = 0; i < n - 1; i++) {
- for (int j = 0; j < n - i - 1; j++) {
-  if (arr[j] > arr[j + 1]) {
-                
- int temp = arr[j];
-   arr[j] = arr[j + 1];
-  arr[j + 1] = temp;
-            }
-        }
-    }
-}
-
+    
